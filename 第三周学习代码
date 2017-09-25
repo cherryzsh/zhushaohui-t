@@ -1,0 +1,56 @@
+第三周作业
+#include<iostream>
+using namespace std;
+int main()
+{ 
+  int a=6,b=3;
+  float x=3.5,y=2.5;
+  cout<<x+a%3*int(x+y)%2/4;
+} 
+问答程序
+#include<iostream>
+using namespace std;
+int main()
+{
+	int i;
+	cout<<"请输入变量i的值："; 
+	cin>>i;
+	cout<<"您输入的值是："<<i<<endl;
+	return 0; 
+ } 
+ 字符
+ #include<stdio.h>
+int main()
+{int a=0,b=0;
+ char ch
+ while((ch=getchar())!='0')
+ {if(ch>='a'&&ch<='z'||ch>='A'&&ch<='z')
+       a++;
+  else if(ch>='0'&&ch<='9')
+       b++;
+ }
+{printf("zi_mu:%d,shu_zi:%d\n",a,b);
+return 0; 
+} 
+a,b值互换
+（1）#include<iostream>
+using namespace std;
+int main()
+{
+	int a=5,b=8;
+	a=a+b;b=a-b;a=a-b;
+	cout<<a<<endl;
+	cout<<b<<endl;
+	return 0;
+}
+（2）#include<iostream>
+using namespace std;
+int main()
+{
+	int a=5,b=9;
+	a=a^b;b=b^a;a=a^b;
+	cout<<a<<endl;
+	cout<<b<<endl;
+	return 0;
+}
+
