@@ -1,0 +1,62 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int x,y;
+	char a,b;
+	cin>>x>>y>>a>>b;
+	cout<<"x="<<x<<"y="<<y<<"a="<<a<<"b="<<b<<endl;
+	return 0;
+}
+#include<iostream>
+using namespace std;
+int main()
+{
+	char x,y,a,b,z;
+	cin>>x>>y>>a>>b>>z;
+	cout<<x<<y<<a<<b<<z<<endl;
+	return 0; 
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+	double a,b,c;
+	cin>>a>>b>>c;
+	double s=(a+b+c)/2;
+	double Area=sqrt(s*(s-a)*(s-b)*(s-c));
+	cout<<"s="<<s<<"Area="<<Area<<endl; 
+	printf("%.2lf",Area);
+	return 0;
+}
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a,b,c,d;
+	cin>>hex>>a;
+	cin>>oct>>b;
+	cin>>c;
+	cin>>dec>>d;
+	cout<<a<<','<<b<<','<<c<<','<<d<<endl;
+	return 0; 
+}
+#include<iostream>
+using namespace std;
+int main()
+{
+	char c1,c2,c3;
+	cin>>c1>>c2>>c3;
+	return 0;
+ }
+#include<iostream>
+using namespace std;
+int main()
+{
+	char c1,c2,c3;
+	cin.get(c1);
+	cin.get(c2);
+	cin.get(c3);
+	cout<<"c1="<<c1<<"c2="<<c2<<"c3="<<c3<<endl;
+	return 0;
+ }
