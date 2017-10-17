@@ -1,0 +1,233 @@
+计算数字，字母个数：
+#include<iostream>
+using namespace std;
+int main()
+{
+	char ch;
+	int num1=0,num2=0,num3=0,num4=0,num5=0;
+	ch=cin.get();
+	while(ch!='#')
+	{if(ch>='a'&&ch<='z')
+	    num1++;
+     else if(ch>='A'&&ch<='Z')
+        num2++;
+     else if(ch>='0'&&ch<='9')
+     num3++;
+     else if(ch=='\n')
+     num4++;
+     else num5++;
+     ch=cin.get();
+ }
+     cout<<"num1="<<num1<<"num2="<<num2<<"num3="<<num3<<"num4="<<num4<<"num5="<<num5;    
+	return 0;
+}
+判断闰年：
+1，#include<iostream>
+using namespace std;
+int main()
+{
+	cout<<"请输入年份"<<endl;
+	int n;
+	cin>>n;
+	int m=n%4;
+	switch(m)
+	{
+		case(0): if(n%100==0) 
+		   {
+		   cout<<"不是闰年"<<endl;
+		   break;	
+		   }
+		default: cout<<"是闰年"<<endl; 
+	 } 
+	 return 0;
+ } 
+2， #include<iostream>
+using namespace std;
+int main()
+{
+	int a,b,c;
+	cout<<"请输入年份：";
+	cin>>a;
+	b==a%4,c==a%100;
+	if(b==0,c==0) 
+	cout<<"闰年";
+	else cout<<"不是闰年";
+	return 0; 
+}
+输出图形：
+#include<iostream>
+using namespace std;
+int main()
+{
+	int left,line=7;
+	for(int i=0;i<line;i++)
+	{
+		if (i<=line/2) left=i;
+		else left=line-i-1;
+		for(int j=0;j<line;j++)
+		{	
+			if(j>=left&&j<line-left) printf("*");
+			else printf(" ");
+		}
+		printf("\n");
+	}
+}
+1元，2元，5元
+#include<iostream>
+using namespace std;
+int main()
+{
+	int m,n=0;
+	cout<<"请输入一个整数N（1<=N<=1000)";
+	cin>>m;
+	for(int i=1;i<=m;i++)
+	for(int j=1;j<=m;j++)
+	for(int k=1;k<=m/5;k++)
+	if(i*1+2*j+k*5==m)
+	{
+		cout<<"1元"<<i<<"个，2元"<<j<<"个，5元"<<k<<"\n";
+		n++; 
+	}
+	cout<<"总组合数是："<<n<<endl; 
+ return 0;}
+ 得出正确答案：
+ #include <iostream>
+#include <stdlib.h> 
+#include <time.h>  
+using namespace std;
+int main() 
+ { int a,b,c;
+ 	srand((unsigned)time(NULL));
+  a=rand();
+  b=rand();
+  cout<<a<<"+"<<b<<"=?\n";
+  cout<<"Please input your answer:";
+  cin>>c;
+  cout <<"The right answer is:"<<a<<"+"<<b<<"="<< a+b <<endl;
+  cout <<"Your answer is     :"<<a<<"+"<<b<<"="<< c <<endl;
+ 	return 0;
+}
+
+判断答案对错：
+#include<iostream>
+#include<stdlib.h>
+#include<time.h> 
+using namespace std;
+int main()
+{
+	int a,b,c;
+	  srand((unsigned)time(NULL));
+	  a=rand();
+	  b=rand();
+	  cout<<a<<"+"<<b<<"=?\n";
+	  cout<<"Please input your answer";
+	  cin>>c;
+	  if(c==a+b)
+	  cout<<'T';
+	  else
+	  cout<<'F';
+	  return 0; 
+ }
+
+限定随机数的范围：
+#include<iostream>
+#include<time.h> 
+#include<stdlib.h>
+using namespace std;
+int main() 
+{ 
+  int i,j,a;
+  int k=0+rand()%(100-1);
+  srand((unsigned)time(NULL));
+  i=rand();
+  int k1=0+i%(100-1);
+  j=rand();
+  int k2=0+i%(100-1);
+  cout<<k1<<"+"<<k2<<"=?\n"<<endl;
+  cout<<"请输入你的答案："<<endl;
+  cin>>a;
+  if(a==k1+k2)
+  cout<<'T';
+  else
+  cout<<'F';
+  return 0;
+}
+
+将百分制转换为五分制：
+1，#include<iostream>
+using namespace std;
+int main()
+{
+	int a;
+	cin>>a;
+	if (a>=90)
+	   cout<<'A';
+	else if   (a<90&&a>=80)
+	   cout<<'B';
+	else if   (a<80&&a>=70)
+	   cout<<'C';
+	else if   (a<70&&a>=60)
+	   cout<<'D';
+	else
+	   cout<<'E';
+	return 0; 
+	}
+2，#include<iostream>
+using namespace std;
+int main()
+{
+	float score;
+	int b;
+	cin>>score;
+	b=score/10;
+	switch(b)
+	{
+	case 10:cout<<"A"<<endl;break;
+	case 9:cout<<"A"<<endl;break;
+	case 8:cout<<"B"<<endl;break;
+	case 7:cout<<"C"<<endl;break;
+	case 6:cout<<"D"<<endl;break;
+	default:cout<<"E";
+	return 0;
+	}
+}
+学生成绩管理系统：
+#include <iostream>
+using namespace std;
+int main()
+{
+	int x,a,b,c,d,S,C,D,num,m,n=0;
+	m=n/400;
+	cout<<"您好，欢迎来到成绩查询系统！\n请输入您需要执行的程序：\n1.输入并显示4位同学的成绩\n2.求4位同学的平均成绩和总分\n3.4位同学的等级\n4.退出程序\n";
+	if (x==1)
+	{
+	    cin>>num>>a>>b>>c>>d;
+	}
+	if (x==2)
+	{
+		cout<<num<<a<<b<<c<<d;
+	 } 
+	if (x==3)
+	{
+		S==(a+b+c+d)/4;cout<<"4位同学的平均成绩为："<<S;
+	}
+	if(x==4)
+	{
+	    C==a+b+c+d;cout<<"4位同学的总分为："<<C;
+    }
+    if(a>=60)
+    n++;
+	if(b>=60)
+	n++;
+	if(c>=60)
+	n++;
+	if(d>=60)
+	n++;
+	if(x==4)
+	return 0;
+}
+
+
+
+
+
