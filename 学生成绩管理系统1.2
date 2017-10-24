@@ -1,0 +1,114 @@
+#include<iostream>
+using namespace std;
+void passward()
+{
+    int pw,n=1;
+	cout<<"Please input your passward:";
+	cin>>pw;
+	while(pw!=214&&n<3)
+	{cin>>pw;
+	n++;
+}
+	if(pw==214)
+	 cout<<"欢迎来到成绩管理系统"; 
+	else
+	 cout<<"sorry"; 	
+}
+void code1()
+{
+	int A,B,C,D,a,b,c,d;
+	cout<<"请输入代号和成绩："<<endl;
+	cout<<"A=";
+    cin>>a;
+    cout<<endl;
+    cout<<"B=";
+    cin>>b;
+    cout<<endl;
+    cout<<"C=";
+    cin>>c;
+    cout<<endl;
+    cout<<"D=";
+    cin>>d;
+    cout<<endl;
+}
+void code2()
+{
+	int a,b,c,d;
+	 cout<<"----------------"<<endl;
+	 cout<<"|学生代号|         成绩        |"<<endl;
+     cout<<"----------------"<<endl; 
+	 cout<<"|   A    |      "<<a<<"        |"<<endl;
+	 cout<<"----------------"<<endl;
+	 cout<<"|   B    |      "<<b<<"        |"<<endl;
+	 cout<<"----------------"<<endl;
+     cout<<"|   C    |      "<<c<<"        |"<<endl;
+	 cout<<"----------------"<<endl;
+     cout<<"|   D    |      "<<d<<"        |"<<endl;
+	 cout<<"----------------"<<endl;
+}
+float average()
+{
+	int a,b,c,d;
+	float average;
+	average==(a+b+c+d)/4;
+	cout<<"average"<<"="<<average<<endl;
+}
+int sum()
+{
+	int sum,a,b,c,d;
+	sum==a+b+c+d;
+	cout<<"sum"<<"="<<sum<<endl; 
+}
+void score()
+{
+	int a,b,c,d,A,B,C,D;
+	char h;
+	cout<<"请输入查询代号："<<endl;
+	cin>>h;
+	if(h==A)
+	cout<<"您的成绩为："<<a<<endl;
+	else if(h==B)
+	cout<<"您的成绩为："<<b<<endl;
+	else if(h==C)
+	cout<<"您的成绩为："<<c<<endl;
+	else if(h==D)
+	cout<<"您的成绩为："<<d<<endl; 
+}
+void passrate()
+{
+	int i=0,pr,a,b,c,d;
+	if(a>=60)
+	i++;
+	if(b>=60)
+	i++;
+	if(c>=60)
+	i++;
+	if(d>=60)
+	i++;
+	pr==(i*1.0)/ 4;
+	cout<<"及格率为："<<pr<<endl; 
+}
+int main()
+{
+	cout<<"**********************************************"<<endl;
+    cout<<"*    欢迎使用学生成绩管理系统1.1             *"<<endl;
+    cout<<"*   王小明   计算机1703班 2017.9.11          *"<<endl;
+    cout<<"*     1、输入4个同学的代号和成绩             *"<<endl;
+    cout<<"*     2、显示4个同学的代号和成绩列表         *"<<endl;
+    cout<<"*     3、求4人平均分                         *"<<endl;
+    cout<<"*     4、求4人总分                           *"<<endl;
+    cout<<"*     5、查询某同学的分数                    *"<<endl;
+    cout<<"*     6、统计及格率                          *"<<endl;
+    cout<<"*     7、退出                                *"<<endl;
+    cout<<"*      请输入(1-5)选择：                     *"<<endl;
+    cout<<"*                                            *"<<endl;
+    cout<<"**********************************************"<<endl;
+    passward();
+    code1();
+	code2();
+	average();
+	sum();
+	score();
+	passrate();
+	return 0;
+}
