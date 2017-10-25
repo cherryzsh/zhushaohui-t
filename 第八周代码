@@ -1,0 +1,150 @@
+ch5.1
+#include<iostream>
+using namespace std;
+void average()
+{
+	int a,b,c,d,average;
+	cin>>a>>b>>c>>d;
+	average=(a+b+c+d)/4;
+	cout<<"average="<<average;
+ }
+int main()
+{
+	average();
+	return 0;
+}
+ch5.2
+#include<iostream>
+using namespace std;
+int min(int a,int b);
+double min(double c,double d);
+int main()
+{
+	cout<<min(5,6)<<endl;
+	cout<<min(7.5,7.3)<<endl;
+	return 0;
+}
+int min(int a,int b)
+{
+	return (a>b?b:a);
+}
+double min(double c,double d)
+{
+	return (c>d?d:c);
+}
+ch5.3
+#include <iostream>  
+using namespace std;  
+int main()  
+{  
+    int n,i,a[50];  
+    cout<<"请输入一个十进制数：";  
+    cin>>n;  
+    for (i=0; ;i++)  
+    {  
+        a[i]=n%2;  
+        n=n/2;  
+        if (n==0) break;  
+    }  
+    cout<<"输出的二进制数是：";  
+    for (;i>=0;i--)  
+    {  
+        cout <<a[i];  
+    }  
+    cout<<endl;  
+    return 0;  
+}  
+ch5.31
+#include<stdio.h>
+using namespace std;
+void fun(int d)
+{ 
+    if(d==0) return ;
+    else 
+    { 
+     fun(d/2);
+     printf("%d",d%2);
+    }
+}
+int main()
+{ 
+    int a;
+    scanf("%d",&a);
+    fun(a);
+    return 0;
+}
+传值调用
+#include<iostream>
+using namespace std;
+void swap(int x,int y)
+{
+	int t;
+	t=x;x=y;y=t;
+	cout<<"x="<<x<<","<<"y="<<y<<endl;;
+}
+int main()
+{
+	int a(4),b(8);
+	swap(a,b);
+	cout<<"a="<<a<<","<<"b="<<b;
+	return 0;
+}
+验证哥德巴赫猜想
+#include<iostream>
+#include<cmath>
+using namespace std;
+bool prime(int a)
+{
+	int i,k;
+	k=(int)sqrt(a);
+	for(i=2;i<=k;i++)
+	if(a%i==0)
+	return false;
+	else
+	return true;
+}
+int main()
+{
+	int a,b,m,n;
+	for(m=96;m<=100;m+=2)
+	for(a=2;a<=m/2;a++)
+	{
+		if(prime(a))
+		{b=m-a;
+		}
+		if(prime(b))
+		{cout<<m<<"="<<a<<"+"<<b<<endl;
+		}
+	}
+	return 0; 
+}
+计算字符个数
+#include<iostream>
+#include <stdio.h>
+using namespace std;
+int main()
+{int a[128]={0};
+ char ch;
+ do
+ {scanf("%c",&ch);
+  a[ch]++;
+ }while(ch!='\n');
+ for(ch='A';ch<='Z';ch++)
+   if(a[ch])cout<<ch<<":"<<a[ch]<<endl;
+ for(ch='a';ch<='z';ch++)
+   if(a[ch])cout<<ch<<":"<<a[ch]<<endl;
+ return 0;
+}
+第四张预习
+#include<iostream>
+using namespace std;
+int main()
+{
+	float a,b,c;
+	cout<<"请输出三个数";
+	cin>>a>>b>>c;
+	if(a<=b&&b<=c) cout<<"最小值："<<a<<endl;
+	else if(b<=a&&a<=c) cout<<"最小值："<<b<<endl;
+	else cout<<"最小值："<<c<<endl;
+	return 0;
+ } 
