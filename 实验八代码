@@ -1,0 +1,114 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+struct stud
+{
+    char num[10];
+	char name[20];
+	int age;
+	char sex;
+	int score;
+};
+float average(stud studs[],int n)
+{
+	float aver=0;
+	for(int i=0;i<n;i++)
+	    aver+=studs[i].score;
+	aver/=n;
+	return aver;
+}
+void print(stud studs[],int n)
+{
+	cout<<setw(12)<<"学号"<<setw(15)<<"姓名"<<setw(8)<<"年龄"<<setw(8)<<"性别"<<setw(8)<<"成绩"<<endl;
+	for(int i=0;i<n;i++)
+	cout<<setw(12)<<studs[i].num<<setw(15)<<studs[i].name<<setw(8)<<studs[i].age<<setw(8)<<studs[i].sex<<setw(8)<<studs[i].score<<endl;
+	 
+}
+int main(void)
+{
+	stud studs[4]={{"020110101","wu",19,'m',80},{"020110102","li",18,'f',90},{"0201100103","wo",19,'f',90},{"0201100104","zhu",18,'m',98}};
+	float aver;
+	print(studs,4);
+	aver=average(studs,4);
+	cout<<"平均成绩为："<<aver<<endl;
+	return 0;
+}
+#include<iostream>
+using namespace std;
+int main()
+{
+	union
+	{
+		int i;
+		char c[4];
+	}a;
+	cout<<"请输入一个整数："<<endl;
+	cin>>a.i;
+	for(int k=3;k>=0;k--)
+	   cout<<(int)a.c[k]<<'\t';
+	   cout<<endl;
+	   return 0;
+	}	
+  #include<iostream>
+#include<iomanip>
+using namespace std;
+enum color {red,yellow,blue,white,black,purple};
+void print(color c)
+{
+	switch(c)
+	{
+		case red: cout<<setw(10)<<"red"; break;
+		case yellow: cout<<setw(10)<<"yellow"; break;
+		case blue: cout<<setw(10)<<"blue"; break;
+		case white: cout<<setw(10)<<"white"; break;
+		case black: cout<<setw(10)<<"black"; break;
+		case purple: cout<<setw(10)<<"purple"; break;
+		default: break; 
+	}
+}
+int main()
+{
+	int count=0;
+	color i,j,k;
+	for(i=red;i<=purple;i=color(int(i) +1))
+	for(j=red;j<=purple;j=color(int(j) +j))
+	if(i!=j)
+	for(k=red;k<=purple;k=color(int(i) +k))
+	if(k!=i&&k!=j)
+	{
+		cout<<setw(10)<<++count;
+		print(i);
+		print(j);
+		print(k);
+		cout<<endl;
+	}
+	cout<<"可能的组合数有："<<count<<endl;
+	return 0;
+}
+#include<iostream>
+#include<iomanip> 
+using namespace std;
+enum color {red,yellow,blue,white,black,purple};
+void print(int count,int i,int j,int k)
+{
+	char p[][7]={"red","yellow","blue","white","black","purple"};
+	cout<<setw(10)<<count<<setw(10)<<p[i]<<setw(10)<<p[j]<<setw(10)<<p[k]<<endl;
+	
+}
+int main()
+{
+	int i,j,k,count=0;
+	for(i=red;i<=purple;i++)
+	for(j=red;j<=purple;j++)
+	if(i!=j)
+	for(k=red;k<=purple;k++)
+	if(k!=i&&k!=j)
+	{
+		count++;
+		print(count,i,j,k);
+	}
+	cout<<"可能的组合数为："<<count<<endl;
+	return 0;
+}
+
+
