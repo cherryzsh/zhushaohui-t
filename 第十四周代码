@@ -1,0 +1,209 @@
+#include<iostream> 
+using namespace std; 
+class Teacher 
+{public : 
+	void set_teacher() 
+	{cout<<"please input this teacher num,age,name,addr,email,post,salary,sex,tel,headship"<<endl; 
+	 cin>>teacher_no; 
+	 cin>> teacher_age; 
+	 cin>>teacher_name; 
+	 cin>>teacher_addr;
+	 cin>>teacher_email;
+	 cin>>teacher_post;
+	 cin>>teacher_salary;
+	 cin>>teacher_sex;
+	 cin>>teacher_tel;
+	  cin>>teacher_headship;
+	}; 
+	void display() 
+	{
+		cout<<"num="<<teacher_no<<'\n'<<"name="<<teacher_name<<"age="<<teacher_age<<'\n'<<"sex="<<teacher_sex<<'\n'<<"addr="<<teacher_addr<<'\n'<<"tel="<<teacher_tel<<'\n'<<"email="<<teacher_email<<'\n'<<"headship="<<teacher_headship<<'\n'<<"post="<<teacher_post<<'\n'<<"salary="<<teacher_salary<<endl;
+	}; 
+ private: 
+	 int teacher_no; 
+	 int teacher_age; 
+	 char teacher_name; 
+	 char teacher_addr;
+	 char teacher_email;
+	 char teacher_post;
+	 char teacher_salary;
+	 char teacher_sex;
+	 char teacher_tel;
+	  char teacher_headship;
+}; 
+int main() 
+{ Teacher a; 
+  a.set_teacher(); 
+  a.display(); 
+  return 0; 
+} 
+（三）例10.6
+#include<iostream>
+#include<cstring>
+using namespace std;
+class Student
+{
+	char Num[10];
+	char *Name;
+	int Score;
+public:
+	Student(char *nump=NULL,char *namep=NULL,int score=0)
+	{
+		if (nump)
+		strcpy(Num,nump);
+		else
+		strcpy(Num," ");
+		if(namep)
+		{
+			Name=new char[strlen(namep)+1];
+			strcpy(Name,namep);
+		}
+		else
+		    Name=NULL;
+		Score=score;
+		cout<<"Constructor Called!\n";
+	}
+~Student()
+{
+	if(Name) delete[] Name;
+	cout<<"Destructor Called!\n";
+}
+void Show()
+{
+	cout<<Num<<'\t'<<Name<<'\t'<<Score<<endl;
+}
+};
+int main()
+{
+	Student a("040120518","George",80);
+	a.Show();
+	return 0;
+}
+（四）例10.7
+#include<iostream> 
+using namespace std;
+class Date
+{
+	int Year,Month,Day;
+public:
+	Data(int y=2000,int m=1,int d=1)
+	{
+		Year=y;Month=m;Day=d;
+		cout<<"Constructor:";
+		ShowDate();
+	}
+	void ShowDate()
+	{
+		cout<<Year<<'.'<<Month<<'.'<<Day<<endl;
+	}
+	~Date()
+	{
+		cout<<"Destructor:";
+		ShowDate();
+	}
+};
+Date d4(2016,4,4);
+void fun()
+{
+	cout<<"进入fun（）函数！\n";
+	static Date d2(2016,2,2);
+	Date d3(2016,3,3);
+	cout<<"退出fun（）函数！\n";
+}
+int main()
+{
+	cout<<"进入main（）函数！\n";
+	Date d1(2016,1,1);
+	fun();
+	fun();
+	cout<<"退出main（）函数!\n";
+	return 0;
+}
+（二）例10.4
+#include<iostream>
+#include<cmath>
+using namespace std;
+class CRect
+{
+	private:
+		int left,top,right,bottom;
+	public:
+		void setcoord(int,int,int,int);
+		void getcoord(int *L,int *T,int *R,int *B)
+    {
+    	*L=left; *T=top; *R=right; *B=bottom;
+	}
+	void print(void)
+	{
+		cout<<"Area="<<abs(right-left)*abs(bottom-top)<<endl;
+	}
+};
+void CRect::setcoord(int L,int T,int R,int B)
+{
+	left=L;top=T;right=R;bottom=B;
+}
+int main()
+{
+	CRect r1,r2;
+	int a,b,c,d;
+	r1.setcoord(100,300,50,200);
+	r1.getcoord(&a,&b,&c,&d);
+	cout<<"left="<<a<<'\t'<<"top="<<b<<endl;
+	cout<<"right="<<c<<'\t'<<"bottom="<<d<<endl;
+	r1.print();
+	r2=r1;
+	r2.print();
+	return 0;
+}
+2.代码：
+#include<iostream>
+#include<cstring>
+using namespace std;
+#include"person.h"
+int main()
+{
+	Person a, *pa;
+	char name[20];
+	a.SetData("cheng",'F',20);
+	a.GetName(name);
+	cout<<"name="<<name<<'\t';
+	cout<<"sex="<<a.GetSex()<<'\t';
+	cout<<"age="<<a.GetAge()<<endl;
+	pa=&a;
+	pa->SetData("zhang",'F',19);
+	pa->GetName(name);
+	cout<<"name="<<name<<'\t';
+	cout<<"sex="<<pa->GetSex()<<'\t';
+	cout<<"age="<<pa->GetAge()<<endl;
+	return 0;
+}
+（一）例10.3
+1.头文件：
+class Person
+{
+	char Name[20];
+	char Sex;
+	int Age;
+public:
+	void SetData(char[],char,int);
+	void GetName(char *);
+	char GetSex();
+	int GetAge();
+};
+void Person::SetData(char na[],char s,int a)
+{
+	strcpy(Name,na);
+	Sex=s;
+	Age=a;
+}
+void Person::GetName(char *na)
+{
+	strcpy(na,Name);
+}
+char Person::GetSex()
+{
+	return Sex;
+}
+int Person::GetAge()
+{
+	return Age;
